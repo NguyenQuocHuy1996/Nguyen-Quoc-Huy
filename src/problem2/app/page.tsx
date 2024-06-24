@@ -23,7 +23,6 @@ const Home = () => {
   if (isLoading) return <Processing />;
 
   return <section>
-    <h1 className="mb-6 font-bold">Currency Swap Calculator</h1>
     <Formik
       initialValues={{
         principalA: '',
@@ -82,6 +81,11 @@ const Home = () => {
         /* and other goodies */
       }) => (
         <form onSubmit={handleSubmit}>
+          <ul className='mb-6'>
+            <li>*If the page is stuck in loading, please wait a minute and refresh the application (F5) because the problem may come from fetching an unstable API</li>
+            <li>*This application has a responsive layout</li>
+          </ul>
+          <h1 className="mb-6 font-bold">Currency Swap Calculator</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <FormControl fullWidth>
               <InputLabel id="interestRate-a-label">Currency for Company A</InputLabel>
