@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  margin: 0;
+  padding: 0
+}
+
+a {
+  text-decoration: unset;
+}
+
+a:visited,
+button:visited,
+input:visited,
+textarea:visited,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+a:visited,
+button:visited,
+input:visited,
+textarea:visited {
+  outline: unset;
+  box-shadow: unset;
+  border: unset;
+}
+
+.MuiInputBase-root {
+  width: 100%;
+}
+.MuiSelect-select {
+  padding: 8.5px 14px !important;
+}

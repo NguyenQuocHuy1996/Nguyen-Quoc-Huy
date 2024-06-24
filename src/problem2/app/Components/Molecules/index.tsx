@@ -1,0 +1,1 @@
+export { default as SwapResult } from '@/app/Components/Molecules/SwapResult';

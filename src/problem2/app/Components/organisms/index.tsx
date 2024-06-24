@@ -1,0 +1,1 @@
+export { default as Aside } from '@/app/Components/Organisms/Aside';
