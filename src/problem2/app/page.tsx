@@ -9,12 +9,12 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import MenuItem from '@mui/material/MenuItem';
-import { Button, FormLabel, TextField, Select, InputLabel, Box, FormControl } from '@mui/material';
+import { Button, TextField, Select, InputLabel, FormControl } from '@mui/material';
 import { SwapResult } from './Components/Molecules';
 import PaymentPerPeriodResult from './Components/Molecules/PaymentPerPeriodResult';
 
 const Home = () => {
-  const { data: prices, isError, isLoading } = useGetPrices();
+  const { data: prices, isLoading } = useGetPrices();
 
   const [paymentA, setPaymentA] = useState<any>(null);
   const [paymentB, setPaymentB] = useState<any>(null);
@@ -78,7 +78,6 @@ const Home = () => {
         handleChange,
         handleBlur,
         handleSubmit,
-        isSubmitting,
         setFieldValue
         /* and other goodies */
       }) => (
