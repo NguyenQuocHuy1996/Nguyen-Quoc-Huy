@@ -1,0 +1,32 @@
+1. The provided code exhibits several computational inefficiencies and anti-patterns:
+    a. Filtering and Sorting Inefficiency:
+        The useMemo hook is employed to filter and sort balances. The filtering condition checks if balance.amount <= 0 and subsequently sorts the balances by priority. However, the logic to retain balances with non-positive amounts appears flawed.
+        The sorting function compares the priorities of lhs and rhs without a clear definition of lhsPriority, which can lead to errors.
+    b. Formatting Within map:
+        The formatting logic in formattedBalances is superfluous because it can be amalgamated with the primary sorting and filtering logic.
+    c. Redundant Mapping:
+        The code iterates over sortedBalances twice: once to create formattedBalances and again to generate rows. This can be consolidated to avoid redundant iterations.
+    d. Incorrect useMemo Dependencies:
+        prices is included in the dependencies of useMemo even though it is not utilized in the computation of the memoized value.
+    e. Potential Overuse of Props:
+        The props destructuring includes children, which is not utilized in the component.
+    f. Incorrect JSX Key Usage:
+        Using the index as a key in JSX can lead to rendering issues. It is more prudent to use a unique identifier from balance.
+
+
+2. Explanation of Improvements:
+    a. Combined Filtering and Sorting:
+        The filtering and sorting are integrated into a single useMemo call, reducing the number of iterations over balances.
+    b. Corrected Filtering Logic:
+        The filtering condition now accurately retains balances with positive amounts and valid priorities.
+    c. Combined Mapping:
+        Instead of creating formattedBalances separately, the formatting is executed within the same useMemo call.
+    d. Accurate Dependencies:
+        Only balances is included in the useMemo dependencies, as prices is not necessary for sorting and filtering.
+    e. Removed Unused children Prop:
+        The children prop was redundant and has been eliminated.
+    f. Improved Key Usage:
+        A unique identifier, such as balance.currency, is employed for the key in the rows mapping. This aids React in optimizing rendering.
+
+
+*There are also some minor errors like syntax, type,... that are also commented in the refactored code
