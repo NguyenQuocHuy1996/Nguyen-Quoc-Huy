@@ -1,6 +1,10 @@
 import { numberWithCommas } from '@/app/Utils/general';
+interface Props {
+    paymentA: number,
+    paymentB: number
+}
 
-const PaymentPerPeriodResult = (props: any) => {
+const PaymentPerPeriodResult = (props: Props) => {
     const { paymentA, paymentB } = props
 
     return (

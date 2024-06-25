@@ -1,6 +1,20 @@
 import { numberWithCommas } from '@/app/Utils/general';
 
-const SwapResult = (props: any) => {
+interface Props {
+    summary: {
+        principalA: number,
+        interestRateA: number,
+        principalB: number,
+        interestRateB: number,
+        totalPaymentA: number,
+        totalPaymentB: number,
+        paymentAPerPeriod: number,
+        paymentBPerPeriod: number,
+        periods: number
+    }
+}
+
+const SwapResult = (props: Props) => {
     const { summary } = props
 
     return (
